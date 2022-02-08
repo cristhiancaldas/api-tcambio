@@ -21,3 +21,7 @@ spring:
           uri: lb://service-tarifario
           predicates:
             - Path=/tarifario/**
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
