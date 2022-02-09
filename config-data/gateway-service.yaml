@@ -21,8 +21,6 @@ spring:
           uri: lb://service-tarifario
           predicates:
             - Path=/tarifario/**
-          filters:
-            - AuthFilter
         - id: user-service
           uri: lb://user-service
           predicates:
@@ -35,3 +33,5 @@ spring:
           uri: lb://tcambio-service
           predicates:
             - Path=/tipo-cambio/**
+          filters:
+            - AuthFilter
