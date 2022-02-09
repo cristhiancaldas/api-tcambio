@@ -31,3 +31,7 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
+        - id: srv-tipo-cambio
+          uri: lb://srv-tipo-cambio
+          predicates:
+            - Path=/tipo-cambio/**
