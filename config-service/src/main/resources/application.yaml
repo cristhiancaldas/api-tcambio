@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default-label: develop
+          uri: https://github.com/cristhiancaldas/api-tcambio
+          search-paths: config-data
+  application:
+    name: config-service
