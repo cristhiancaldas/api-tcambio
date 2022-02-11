@@ -12,11 +12,10 @@ CREATE TABLE tarifario (
 );
 
 INSERT INTO tarifario (id, codigo, origen, destino, factor) VALUES
-  (1, 'USDPEN', 'USD', 'PEN', 3.8091),
-  (2, 'USDEUR', 'USD', 'EUR', 3.7459),
-  (3, 'USDJPY', 'USD', 'JPY', 2.3679);
-
- /* (4, 'PENUSD', 'PEN', 'USD', 3.2569),
+  (1, 'USDPEN', 'USD', 'PEN', 3.809),
+  (2, 'USDEUR', 'USD', 'EUR', 3.745),
+  (3, 'USDJPY', 'USD', 'JPY', 2.367),
+  (4, 'PENUSD', 'PEN', 'USD', 3.2569),
   (5, 'PENEUR', 'PEN', 'EUR', 3.9819),
   (6, 'PENJPY', 'PEN', 'JPY', 3.7599),
 
@@ -26,6 +25,6 @@ INSERT INTO tarifario (id, codigo, origen, destino, factor) VALUES
 
   (10, 'JPYPEN', 'JPY', 'PEN', 2.6579),
   (11, 'JPYUSD', 'JPY', 'USD', 4.2559),
-  (12, 'JPYEUR', 'JPY', 'EUR', 5.2479);*/
+  (12, 'JPYEUR', 'JPY', 'EUR', 5.2479);
 
 SELECT * FROM tarifario;

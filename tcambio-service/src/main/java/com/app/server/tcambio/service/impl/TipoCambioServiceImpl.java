@@ -18,7 +18,7 @@ public class TipoCambioServiceImpl implements TipoCambioService {
 	public TipoCambioOutputDto getTipoCambioOutputDto(TipoCambioInputDto tipoCambioInputDto) {
 		TipoCambioOutputDto tipoCambioOutputDto= new TipoCambioOutputDto();
 		String codigo = tipoCambioInputDto.getMonedaOrigen().concat(tipoCambioInputDto.getMonedaDestino());
- 	    Tarifario tarifario=restTemplate.getForObject("http://localhost:61388/tarifario/" + codigo, Tarifario.class);
+ 	    Tarifario tarifario=restTemplate.getForObject("http://localhost:8988/tarifario/" + codigo, Tarifario.class);
 		tipoCambioOutputDto.setMontoTipoCambio(tarifario.getFactor().multiply(tipoCambioInputDto.getMonto()));
 		tipoCambioOutputDto.setMonedaDestino(tipoCambioInputDto.getMonedaDestino());
 		tipoCambioOutputDto.setMonedaOrigen(tipoCambioInputDto.getMonedaOrigen());

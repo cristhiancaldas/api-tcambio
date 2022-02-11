@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          default-label: develop
+          default-label: master
           uri: https://github.com/cristhiancaldas/api-tcambio
           search-paths: config-data
   application:
