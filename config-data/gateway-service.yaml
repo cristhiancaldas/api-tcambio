@@ -16,6 +16,13 @@ spring:
       discovery:
         locator:
           enabled: true
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: 'https://docs.spring.io'
+            allowedMethods:
+              - GET
+              - POST
       routes:
         - id: service-tarifario
           uri: lb://service-tarifario
