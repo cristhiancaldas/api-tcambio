@@ -1,15 +1,16 @@
-package com.app.server.tarifario.dto;
+package com.bcp.gatewayservice.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseErrorDto {
-	
-	private String campo;
-	private String mensaje;
-	
+@Data
+@Builder
+public class TokenDto {
+
+    private String token;
+
 }
