@@ -4,6 +4,7 @@ package com.app.server.tarifario.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -48,7 +49,7 @@ public class TarifarioController {
 		return tarifarioService.updateTarifario(id,tarifario);
 	}
 
-	@GetMapping("/tipocambio")
+	@PostMapping("/tipocambio")
 	public Mono<ResponseTipoCambioDto> getTipoCambio(@RequestBody RequestTipoCambioDto requestTipoCambioDto) {
 		return tarifarioService.getTipoCambio(requestTipoCambioDto);
 	}
