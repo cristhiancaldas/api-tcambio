@@ -1,5 +1,9 @@
 server:
+<<<<<<< HEAD
   port: 8988
+=======
+  port: 9034
+>>>>>>> develop
 eureka:
   client:
     fetch-registry: true
@@ -8,3 +12,19 @@ eureka:
       default-zone: http://localhost:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+<<<<<<< HEAD
+=======
+  # ===============================
+  # JPA / HIBERNATE
+  # ===============================
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: false
+>>>>>>> develop

@@ -16,18 +16,21 @@ spring:
       discovery:
         locator:
           enabled: true
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allowedMethods:
+              - GET
+              - POST
       routes:
         - id: service-tarifario
           uri: lb://service-tarifario
           predicates:
             - Path=/tarifario/**
+          filters:
+            - AuthFilter
         - id: auth-service
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
-        - id: tcambio-service
-          uri: lb://tcambio-service
-          predicates:
-            - Path=/tipo-cambio/**
-          filters:
-            - AuthFilter

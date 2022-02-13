@@ -1,11 +1,10 @@
 
 package com.app.server.tarifario.controller;
 
-import javax.ws.rs.PUT;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -14,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.server.tarifario.dto.RequestTipoCambioDto;
+import com.app.server.tarifario.dto.ResponseTipoCambioDto;
 import com.app.server.tarifario.model.Tarifario;
 import com.app.server.tarifario.service.TarifarioService;
 
@@ -43,9 +44,14 @@ public class TarifarioController {
 		return tarifarioService.addTarifario(tarifario);
 	}
 
-	@PutMapping
-	public Mono<Tarifario> updateTarifario(@RequestBody Tarifario tarifario) {
-		return tarifarioService.addTarifario(tarifario);
+	@PutMapping("/{id}")
+	public Mono<Tarifario> updateTarifario(@PathVariable Long id,@RequestBody Tarifario tarifario) {
+		return tarifarioService.updateTarifario(id,tarifario);
+	}
+
+	@PostMapping("/tipocambio")
+	public Mono<ResponseTipoCambioDto> getTipoCambio(@RequestBody RequestTipoCambioDto requestTipoCambioDto) {
+		return tarifarioService.getTipoCambio(requestTipoCambioDto);
 	}
 
 }
