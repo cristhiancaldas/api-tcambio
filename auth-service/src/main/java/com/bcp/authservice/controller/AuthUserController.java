@@ -16,6 +16,14 @@ public class AuthUserController {
     @Autowired
     AuthUserService authUserService;
 
+    @PostMapping("/create")
+    public ResponseEntity<AuthUser> create(@RequestBody AuthUserDto dto){
+        AuthUser authUser = authUserService.save(dto);
+        if(authUser == null)
+            return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok(authUser);
+    }
+    
     @PostMapping("/login")
     public ResponseEntity<TokenDto> login(@RequestBody AuthUserDto dto){
         TokenDto tokenDto = authUserService.login(dto);
@@ -32,11 +40,5 @@ public class AuthUserController {
         return ResponseEntity.ok(tokenDto);
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<AuthUser> create(@RequestBody AuthUserDto dto){
-        AuthUser authUser = authUserService.save(dto);
-        if(authUser == null)
-            return ResponseEntity.badRequest().build();
-        return ResponseEntity.ok(authUser);
-    }
+
 }

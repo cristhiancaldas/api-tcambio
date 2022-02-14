@@ -30,13 +30,8 @@ public class TarifarioController {
 	TarifarioService tarifarioService;
 	
 	@GetMapping
-	public Flux<Tarifario> getAllListTarifarios() {
+	public Flux<Tarifario> getAllListTarifario() {
 		return tarifarioService.listarTarifario();
-	}
-	
-	@GetMapping("/{codigo}")
-	public Mono<Tarifario> getTarifario(@PathVariable String codigo) {
-		return tarifarioService.getTarifario(codigo);
 	}
 	
 	@PostMapping
@@ -49,6 +44,11 @@ public class TarifarioController {
 		return tarifarioService.updateTarifario(id,tarifario);
 	}
 
+	@GetMapping("/{codigo}")
+	public Mono<Tarifario> getTarifario(@PathVariable String codigo) {
+		return tarifarioService.getTarifario(codigo);
+	}
+	
 	@PostMapping("/tipocambio")
 	public Mono<ResponseTipoCambioDto> getTipoCambio(@RequestBody RequestTipoCambioDto requestTipoCambioDto) {
 		return tarifarioService.getTipoCambio(requestTipoCambioDto);
