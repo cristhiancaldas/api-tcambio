@@ -2,6 +2,8 @@ package com.app.server.tarifario.model;
 
 import java.math.BigDecimal;
 
+import javax.validation.constraints.DecimalMax;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;

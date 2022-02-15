@@ -41,7 +41,7 @@ public class TarifarioServiceImpl implements TarifarioService {
 		return tarifarioDao.findById(id).flatMap(tarifa -> {
 			tarifario.setId(id);
 			return tarifarioDao.save(tarifario);
-		}).switchIfEmpty(Mono.empty());
+		});
 	}
 
 	@Override
